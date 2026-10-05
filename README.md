@@ -88,9 +88,10 @@ word[:3]     # "pyt"
 word[9]      # IndexError: string index out of range
 ```
 
-A **slice** like `word[1:4]` never raises, because it returns whatever it can
-find. A single position like `word[9]` raises an `IndexError`, because there
-is no character to return and Python will not invent one.
+A **slice** like `word[1:4]` never raises an `IndexError`. It returns whatever
+characters are there and stops early if it runs out. A single position like
+`word[9]` does raise one, because there is no character to return and Python
+will not invent one.
 
 **Strings are immutable**, which means no string ever changes. A **method** is
 a function that belongs to a value and is called on it with **dot notation**,
