@@ -24,7 +24,3 @@ def describe_total(label, amount):
 
 def censor(text, word):
     return None
-
-
-def rounder(number, setting):
-    return None

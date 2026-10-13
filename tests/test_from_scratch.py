@@ -67,13 +67,3 @@ def test_censor():
     assert censor("no match here", "beets") == "no match here"
     assert censor("beets and beets", "beets") == "***** and *****"
     assert censor("", "beets") == ""
-
-
-def test_rounder():
-    """rounder - rounds according to the setting"""
-    assert rounder(1.1, "up") == 2
-    assert rounder(1.9, "down") == 1
-    assert rounder(5.0, "down") == 5
-    assert rounder(0.5, "honest") == 1
-    assert rounder(1.5, "honest") == 2
-    assert rounder(2.5, "honest") == 3

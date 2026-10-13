@@ -16,13 +16,12 @@ from the person running your program.
   - [Question 5: `clean_username`](#question-5-clean_username)
   - [Question 6: `describe_total`](#question-6-describe_total)
   - [Question 7: `censor`](#question-7-censor)
-  - [Question 8: `rounder`](#question-8-rounder)
 - [Modify](#modify)
-  - [Question 9: `order_summary`](#question-9-order_summary)
-  - [Question 10: `print_receipt`](#question-10-print_receipt)
+  - [Question 8: `order_summary`](#question-8-order_summary)
+  - [Question 9: `print_receipt`](#question-9-print_receipt)
 - [Debug](#debug)
-  - [Question 11: `total_with_tax`](#question-11-total_with_tax)
-  - [Question 12: `first_initial`](#question-12-first_initial)
+  - [Question 10: `total_with_tax`](#question-10-total_with_tax)
+  - [Question 11: `first_initial`](#question-11-first_initial)
 - [Submitting](#submitting)
 - [Good luck!](#good-luck)
 
@@ -247,27 +246,11 @@ censor("no match here", "beets")
 
 A string method does the replacing. How can you figure out the number of stars without hard-coding it?
 
-### Question 8: `rounder`
-
-Write a function `rounder` that takes a `number` and a `setting` string, and
-returns the number rounded according to the setting:
-
-- `"up"` — always round up
-- `"down"` — always round down
-- `"honest"` — round to the nearest, with `.5` going up
-
-Have a look at the [`math` module](https://www.w3schools.com/python/module_math.asp).
-
-Be careful with `"honest"`. Python's built-in `round()` does **banker's
-rounding**, which sends a tie to the nearest even number. So `round(0.5)` is
-`0` and `round(2.5)` is `2`, which is not what this question asks for. Food
-for thought.
-
 ## Modify
 
 Change the two functions already in `src/modify.py`.
 
-### Question 9: `order_summary`
+### Question 8: `order_summary`
 
 `order_summary` prints a summary of an order from values written into the
 function. Change it so it asks the person for each one instead.
@@ -286,7 +269,7 @@ Do the following:
   `is_gift` has to end up as `True` or `False` so the `if` still works. Accept
   an uppercase or lowercase answer.
 
-### Question 10: `print_receipt`
+### Question 9: `print_receipt`
 
 `print_receipt` prints each item on its own line, then the word `Total:` on
 one line and the amount on the next. Change it so the items print on a single
@@ -302,7 +285,7 @@ the dollar amount to two decimal places as well!
 
 ## Debug
 
-### Question 11: `total_with_tax`
+### Question 10: `total_with_tax`
 
 `total_with_tax` takes a price that arrived as text and should return it plus
 
@@ -315,7 +298,7 @@ TypeError: can only concatenate str (not "int") to str
 Read the message closely. It says what Python was asked to do and why it
 refused.
 
-### Question 12: `first_initial`
+### Question 11: `first_initial`
 
 `first_initial` should return the first letter of a name, capitalized. It
 returns the second letter, and raises an `IndexError` on a name one letter
