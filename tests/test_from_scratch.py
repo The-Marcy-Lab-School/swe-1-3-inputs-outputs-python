@@ -5,7 +5,6 @@ from from_scratch import (
     extract_domain,
     format_name,
     rotate,
-    rounder,
     starts_with_vowel,
 )
 
