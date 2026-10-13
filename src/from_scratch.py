@@ -1,30 +1,30 @@
 def format_name(first, last):
-    pass
+    return None
 
 
 def starts_with_vowel(word):
-    pass
+    return None
 
 
 def extract_domain(email):
-    pass
+    return None
 
 
 def rotate(text, amount):
-    pass
+    return None
 
 
 def clean_username(raw):
-    pass
+    return None
 
 
 def describe_total(label, amount):
-    pass
+    return None
 
 
 def censor(text, word):
-    pass
+    return None
 
 
 def rounder(number, setting):
-    pass
+    return None

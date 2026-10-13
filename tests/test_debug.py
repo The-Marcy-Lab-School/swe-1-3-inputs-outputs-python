@@ -1,6 +1,6 @@
 import pytest
 
-from debug import first_initial, shout, total_with_tax
+from debug import first_initial, total_with_tax
 
 TEST_SUITE_NAME = "Debug Tests"
 
@@ -17,10 +17,3 @@ def test_first_initial():
     assert first_initial("ada") == "A"
     assert first_initial("Zo") == "Z"
     assert first_initial("b") == "B"
-
-
-def test_shout():
-    """shout - capitalizes the first letter and adds an exclamation mark"""
-    assert shout("hello") == "Hello!"
-    assert shout("a") == "A!"
-    assert shout("Already") == "Already!"

@@ -23,7 +23,6 @@ from the person running your program.
 - [Debug](#debug)
   - [Question 11: `total_with_tax`](#question-11-total_with_tax)
   - [Question 12: `first_initial`](#question-12-first_initial)
-  - [Question 13: `shout`](#question-13-shout)
 - [Submitting](#submitting)
 - [Good luck!](#good-luck)
 
@@ -137,7 +136,7 @@ format_name("ZO", "SMITH")
 ```
 
 There is a [string method](https://www.w3schools.com/python/python_ref_string.asp)
-that does exactly this for one word. This is a cool trick to know.
+that does exactly this for one word. Can you find it? Can you also write this "by hand"?
 
 ### Question 2: `starts_with_vowel`
 
@@ -157,9 +156,7 @@ starts_with_vowel("")
 ```
 
 That last case catches people. An empty string starts with nothing, so the
-answer is `False` — but `"" in "aeiou"` is `True`, because every string
-contains the empty string. If you reach for `in`, test the empty case before
-you move on.
+answer is always `False`.
 
 ### Question 3: `extract_domain`
 
@@ -173,8 +170,7 @@ extract_domain("a.b@mail.co.uk")
 # "mail.co.uk"
 ```
 
-Hint: a string method can cut a string into pieces wherever a character
-appears, and hand you back a list of them.
+Hint: find the index of the `@` symbol and then slice the string. "find and slice" is a common pattern!
 
 ### Question 4: `rotate`
 
@@ -183,13 +179,13 @@ string with that many characters moved from the end to the front.
 
 ```python
 rotate("hello", 1)
-# "ohell"
+# "ohell" — the "o" at the end is rotated to the front
 rotate("hello", 3)
-# "llohe"
+# "llohe" — the "llo" at the end is rotated to the front
 rotate("xyz", 3)
-# "xyz"
+# "xyz" — the whole string is rotated, nothing changes!
 rotate("test", 0)
-# "test"
+# "test" — nothing is rotated
 ```
 
 [Slicing](https://www.w3schools.com/python/python_strings_slicing.asp) makes
@@ -210,11 +206,11 @@ clean_username("Mixed Case")
 # "mixed case"
 ```
 
-Two methods, one expression. Each one hands back a new string, so the second
-can be called straight onto the result of the first.
+Try writing this in one line! There are two methods that can be combined into one like this:
 
-This is exactly what you do to anything a person typed, because people leave
-spaces and shout in capitals.
+```py
+str.method1().method2()
+```
 
 ### Question 6: `describe_total`
 
@@ -230,13 +226,10 @@ describe_total("Books", 12)
 # "Books: $12.00"
 ```
 
-An f-string can round for display with a **format specifier**, written after a
+An f-string can round a number for display with a **format specifier**, written after a
 colon inside the braces.
 [String formatting](https://www.w3schools.com/python/python_string_formatting.asp)
-shows what `:.2f` does.
-
-This changes how the number is *shown* and leaves the number alone. Question 8
-changes the number itself, which is a different job.
+shows how this works.
 
 ### Question 7: `censor`
 
@@ -252,8 +245,7 @@ censor("no match here", "beets")
 # "no match here"
 ```
 
-A string method does the replacing. The number of stars has to match the
-length of the word, so build that part rather than typing it.
+A string method does the replacing. How can you figure out the number of stars without hard-coding it?
 
 ### Question 8: `rounder`
 
@@ -283,15 +275,16 @@ function. Change it so it asks the person for each one instead.
 The values are **hard-coded**, meaning they are written into the source, so
 the only way to summarize a different order is to edit the program. It
 hard-codes the item, the quantity, the price, and whether the order is a
-gift. Replace each with a call to `input()`, keeping the printed
-output exactly as it is.
+gift.
 
-Two of those need converting, because `input()` returns a string and the
-quantity and price are used as numbers.
+Do the following:
 
-The gift answer needs more than converting. The person types `y` or `n`, and
-`is_gift` has to end up as `True` or `False` so the `if` still works. Accept
-an uppercase or lowercase answer.
+- Replace each with a call to `input()`, keeping the printed
+  output exactly as it is.
+- Two of those need converting, because `input()` always returns a string!
+- The gift answer needs a different kind of conversion. The person types `y` or `n`, and
+  `is_gift` has to end up as `True` or `False` so the `if` still works. Accept
+  an uppercase or lowercase answer.
 
 ### Question 10: `print_receipt`
 
@@ -304,17 +297,15 @@ Tea, Mug
 Total: $11.25
 ```
 
-Both halves are a `print()` keyword argument away. One call can print every
-item at once with a separator of your choosing, and a call can be told not to
-end its line so the next one continues it.
-
-The amount also needs the two-decimal formatting from question 6.
+Rather than using an f-string here, use the separator keyword. Remember to format
+the dollar amount to two decimal places as well!
 
 ## Debug
 
 ### Question 11: `total_with_tax`
 
 `total_with_tax` takes a price that arrived as text and should return it plus
+
 1. It raises a `TypeError` instead.
 
 ```text
@@ -336,18 +327,6 @@ first_initial("b")     # IndexError
 ```
 
 One number is wrong, and fixing it fixes both problems at once.
-
-### Question 13: `shout`
-
-`shout` should capitalize the first letter of a word and add an exclamation
-mark. It raises a `TypeError` on the first line.
-
-```text
-TypeError: 'str' object does not support item assignment
-```
-
-Strings are immutable, so you cannot assign to a position inside one. Build
-the string you want out of the pieces instead.
 
 ## Submitting
 
